@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'Pacfont';
+    src: url('PAC-FONT.ttf');
+}
+body{
+	padding: 0px;
+	margin: 0px;
+	background-color: #3A3B4C;
+}
+#neon{
+	font-family: Pacfont;
+	font-size: 70px;
+	color : #DA3F47;
+	text-align: center;
+	line-height: 85px;
+	letter-spacing: 5px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	cursor: pointer; 
+	animation-name: bzz;
+  	animation-duration: 4s;
+  	animation-iteration-count: infinite;
+}
+#neon:before{
+	content: 'PACMAN! 1234567890';
+	background:linear-gradient(#FFC929 10%,#E38C41 35%,#FFC929 40%,#E38C41 65%,#FFC929 70%,#E38C41 95%,#FFC929 100%);
+	background-clip: text;
+	-webkit-text-fill-color:transparent;
+	position: absolute;
+	top: 7px;
+	left: 14px;
+	opacity: 0;
+	z-index: -1;
+	animation-name: bzzz;
+  	animation-duration: 4s;
+  	animation-iteration-count: infinite;
+}
+#neon:hover{
+	background:linear-gradient(#FFC929 10%,#E38C41 35%,#FFC929 40%,#E38C41 65%,#FFC929 70%,#E38C41 95%,#FFC929 100%);
+	background-clip: text;
+	-webkit-text-fill-color:transparent;
+	text-shadow: 0px 0px 10px #DA3F47, 0px 0px 25px #DA3F47;
+}
+#neon:hover::before{
+	opacity: 0.3;
+}
+@keyframes bzz {
+  0%,15%,19%{
+	  	background:linear-gradient(#FFC929 10%,#E38C41 35%,#FFC929 40%,#E38C41 65%,#FFC929 70%,#E38C41 95%,#FFC929 100%);
+		background-clip: text;
+		-webkit-text-fill-color:transparent;
+		text-shadow: 0px 0px 10px #DA3F47, 0px 0px 25px #DA3F47;
+	}
+	10%,16%,50%,100%{
+		background:unset;
+		background-clip: unset;
+		-webkit-text-fill-color:unset;
+		text-shadow: none;
+	}
+}
+@keyframes bzzz {
+  0%,15%,19%{opacity: 0.3}
+  10%,16%,35%,100%{opacity: 0}
+}
